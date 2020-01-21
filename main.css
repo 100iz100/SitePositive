@@ -1,0 +1,273 @@
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">
+@media only screen and (max-width: 480px)
+@media only screen and (min-width: 480px) and (max-width: 940px)
+
+
+header{
+	position: relative;
+}
+.logo{
+	position: absolute;
+	top: 8%;
+	left: 12%;
+}
+
+#logo_word{
+	padding: 20px 15px;
+	background: black;
+	font-size: 30px;
+	font-family: Arial, serif;
+	color: white;
+	cursor:pointer;
+	text-decoration: none;
+}
+
+.menu {
+	position: absolute;
+	right: 15%;
+	top:7%;
+	cursor:pointer;
+	font-size: 25px;
+	color:#fff;
+}
+.popUpBg{
+	position: fixed;
+	background: rgba(19,22,25,0.9);
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	display: none;
+	/*при стилизации меню блок*/
+}
+#closePopUp{
+	position: absolute;
+	top:15%;
+	right: 25%;
+	color:#fff;
+	font-size: 25px;
+	cursor:pointer;
+}
+		/*MENU*/
+#openPopUp{
+	font-size: 15px;
+	color: #fff;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	position: relative;
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+}
+
+#openPopUp:hover{
+	border-bottom: 4px solid #fff;
+	border-top: 4px solid #fff;
+}
+		/*SLIDER*/
+
+.img1,.img2,.img3,.img4{
+	width: 100%;
+	min-height: 970px;
+	background: url(images/sliderItem1.jpg) no-repeat 0/cover;
+}
+.img2{
+	background: url(images/sliderItem2.jpg) no-repeat 0/cover;
+}
+.img3{
+	background: url(images/sliderItem3.jpg) no-repeat 0/cover;
+}
+.img4{
+	background: url(images/sliderItem4.jpg) no-repeat 0/cover;
+}
+.sliderDots{
+	position: absolute;
+	bottom: -33%;
+	left:50%;
+	transform:translate(-50%,-10%);
+}
+.dot{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #000;
+	display: inline-block;
+}
+.dot-active{
+	background: #fff;
+}
+			/*POP-UP MENU*/
+#inDaHouse{
+	background: transparent;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+#inDaHouse ul:first-child{
+	display: flex;
+	padding-bottom: 30px;
+}
+#inDaHouse ul:first-child li {
+	font-size: 50px;
+	color: #626262;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#inDaHouse ul:first-child li:not(:last-child){
+	padding-right: 50px;
+}
+
+
+#inDaHouse ul:last-child li a{
+	font-size: 50px;
+	color: #626262;
+	text-decoration: none;
+}
+
+#inDaHouse ul:last-child li:not(:last-child){
+	padding-bottom: 30px;
+}
+
+#inDaHouse ul:first-child li a:hover, #inDaHouse ul:last-child li a:hover{
+	color: #fff;
+	border-bottom: 3px solid;
+}
+		/*Второй попап*/
+.inDaHouse ul li{
+	
+
+}
+
+#SingUpForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 400px;
+	min-height: 500px;
+}
+
+#SingUpForm input:not(:last-child){
+	width: 200px;
+	height: 30px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	color: #000000;
+}
+
+.popUpSecForm{
+	display: none;
+	position: fixed;
+	width: 400px;
+	min-height: 500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: lightblue;
+	text-align:center;
+	z-index: 15;
+}
+
+#registrSubmit{
+	position: absolute;
+	bottom: 20%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+	border:3px gray;
+	cursor: pointer;
+}
+
+#closeSingUp{
+	cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: none;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+#closeSingUp:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 2px;
+    height: 30px;
+    background: #000;
+}
+
+#closeSingUp:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 2px;
+    height: 30px;
+    background: #000;
+}
+
+		/* надпись SMILE*/
+.inscription{
+	position: absolute;
+	top: 55%;
+	right: 1%;
+}
+
+.inscription h1{
+	font-size: 220px;
+	color: #fff;
+}
+
+.inscription h2{
+	font-size: 64px; 
+	color: #fff;
+}
+
+
+/*.popUpMenu> ul> li{
+	position: absolute;
+	top:10%;
+	left: 25%;
+	padding-top: 30px;
+	color:#fff;
+	font-size: 35px;
+	cursor:pointer;
+}*/
+
+
+/*.popUpMenu> ul>li+li {
+	top:10%;
+	left: 40%;
+}
+.popUpMenu> ul>li+li+li {
+	top:23%;
+	left: 25%;
+}
+
+.popUpMenu> ul>li+li+li+li {
+	top:36%;
+	left: 25%;
+}
+
+.popUpMenu> ul>li+li+li+li+li {
+	top:49%;
+	left: 25%;
+}
+
+.popUpMenu> ul>li+li+li+li+li+li {
+	top:62%;
+	left: 25%;
+}
+
+.popUpMenu> ul>li+li+li+li+li+li+li {
+	top:75%;
+	left: 25%;
+}*/
