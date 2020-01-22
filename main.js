@@ -36,8 +36,8 @@ dotsWrap.onclick = function (event) {
 }
 
 
+// pop up menu
 
-// поп ап меню
 let openPop = document.getElementById('openPopUp');
 let closePop = document.getElementById('closePopUp')
 let popUpBg = document.querySelector('.popUpBg')
@@ -50,9 +50,10 @@ closePop.onclick = function (event) {
 	openPop.style.display ="block"
 }
 
-// второе выплывающеe попап 
+// second pop up menu
+
 let buttonClosePopUp = document.getElementById('closeSingUp');
-let openPopSec = document.getElementById('glass');
+let openPopSec = document.getElementById('secondPopOpen');
 let openPopSecDiv = document.getElementById('secPopUpOpen');
 
 openPopSecDiv.onclick = function(event){
@@ -61,10 +62,25 @@ openPopSecDiv.onclick = function(event){
 }
 buttonClosePopUp.addEventListener("click",function(event){
 	openPopSec.style.display = "none";
+	openPop.style.display ="block"
 }) 
 
+// third pop up menu
 
-// popUp регистрация юзера
+let buttonClosePopUpIn = document.getElementById('closeSingIn');
+let openPopThird = document.getElementById('thirdpopopen');
+let openPopThirdDiv = document.getElementById('thirdPopUpOpen');
+
+openPopThirdDiv.onclick = function(event){
+	openPopThird.style.display = "block";
+	popUpBg.style.display ="none"
+}
+buttonClosePopUpIn.addEventListener("click",function(event){
+	openPopThird.style.display = "none";
+	openPop.style.display ="block"
+}) 
+
+// pop up user registration
 const password = document.getElementById("Password");
 const password2 = document.getElementById("PasswordControl");
 const login = document.getElementById("login");
@@ -109,6 +125,30 @@ button.onclick = function(event){
 	} )
 		.then(response => response.json())
 			.then(response => console.log(response))
+}
+// SingIn_______________SingIn____________SingIn______________________________SingIn
+
+const passUser = document.getElementById('pass_third_f')
+const logUser = document.getElementById('login_third_f')
+const buttonForm = document.getElementById ('registrTsird')
+let textResult = document.getElementById ('winnerText')
+
+logUser.onchange = function (event){
+	let test = event.target.value
+	passUser.onchange = function (ev){
+		let testpass = Sha256.hash(ev.target.value)
+		buttonForm.onclick = function(eve){
+			fetch( `https://garevna-rest-api.glitch.me/user/${test}`)
+				
+		.then(response => response.json())
+			.then(response => response.password === testpass ? 				
+					textResult.innerText = `${test} hello`
+							
+					: textResult.innerText = ` Wrong Password `	
+		    )
+		}
+	}
+		 
 }
 
 // 			Слайдерсон

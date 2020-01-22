@@ -13,28 +13,20 @@
       <a id="logo_word" href="">Q U O T E S</a>
     </div>
     
-    <div class="menu">
-        <span id="openPopUp">MENU</span>
-    </div>
-
-
-      <div class="popUpSecForm" id="glass">
-          <form id="SingUpForm">
-             <input type="text" id="login" required placeholder="Ваш логин (email):">
-             <input type="password" id="Password" required placeholder="Password:">   
-             <input type="password" id="PasswordControl" required placeholder="Repeat password:">                      
-             <input type="reset" name="login" value="reset">
-          </form>    
-                
-          <button id="registrSubmit">Submit</button>
-          <button id="closeSingUp"></button>
-      </div>
-        
+  
+    <!--Inscriptions in center of page  -->
+  
     <div class="inscription">
       <h1 class="mainInscription">SMILE</h1>
       <h2 class="secondaryInscription">it cost you nothing</h2>  
     </div>
     
+
+    <!--First main PopUp -->
+    <div class="menu">
+        <span id="openPopUp">MENU</span>
+    </div>
+
     <div class="popUpBg">
       <div class="close">
         <span id ="closePopUp">close</span>
@@ -42,7 +34,7 @@
       <div class="popUpMenu">
         <div id="inDaHouse">
           <ul>
-            <li>Sing In</li>
+            <li id="thirdPopUpOpen">Sing In</li>
             <li id="secPopUpOpen">Sing Up</li>
           </ul>
           
@@ -55,6 +47,41 @@
         </div>
       </div>
     </div>
+    
+     <!-- secondary PopUp -->
+
+      <div class="popUpSecForm" id="secondPopOpen">
+        <form id="SingUpForm">
+           <input type="text" id="login" required placeholder="Ваш логин (email):">
+           <input type="password" id="Password" required placeholder="Password:">   
+           <input type="password" id="PasswordControl" required placeholder="Repeat password:">                      
+           <input type="reset" name="login" value="reset">
+        </form>    
+                
+          <button id="registrSubmit">Submit</button>
+          <button id="closeSingUp"></button>
+      </div>
+     
+     <!-- third PopUp -->
+
+      <div class="popInThirdForm" id="thirdpopopen">
+          <form id="SingInForm">
+             <input type="text" id="login_third_f" required placeholder="Ваш логин (email):">
+             <input type="password" id="pass_third_f" required placeholder="Password:">     
+             <input type="reset" name="login" value="reset">
+          </form>    
+                
+          <button id="registrTsird">Submit</button>
+          <button id="closeSingIn"></button>
+      </div>
+    
+    <!-- result of registration -->
+    <h2 id="winnerText"></h2>
+   
+
+
+    <!-- slider -->
+
     <div class="slidesWrapp">
       <div class="sliderItem img1" id="sliderIMG">
          <!--  <img src="images/sliderItem1.gs.png" alt=""> -->
@@ -75,8 +102,13 @@
           <div class="dot"></div>
       </div>
     </div>
+
+
   </header>
+
   <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"></script>
   <script src="main.js"></script>
+
+
 </body>
 </html>
