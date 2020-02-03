@@ -1,20 +1,32 @@
 /*<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">*/
+@media only screen and (max-width: 500px){
+	body header{ 
+	text-align: center;	
+	}
+
+	#logo_word{
+		/*position: absolute;
+		top:2%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;*/
+
+	}
+}
+
 @media only screen and (max-width: 768px){
 	body header{
 		display: grid;
 		grid-template-rows: 500px;
 		h1:85px;
+		text-align: center;
 	}
 }
-@media only screen and (max-width: 500px){
-	/*#logo_word{
-		position: absolute;
-		top:2%;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 100%;
-	}*/
+
+@media (min-width: 768px) and (max-width: 992px){
+
 }
+
 
 
 

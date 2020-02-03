@@ -116,16 +116,32 @@ password2.onchange = function ( event ) {
 }
 
 button.onclick = function(event){
-	fetch( `https://garevna-rest-api.glitch.me/user/${userInfo.login}`, {
-		method: "POST", 
-		headers: {
-		  "Content-Type" : "application/json"
+	const getUserInfo = async (url, method) => {
+		let user = await (fetch(url, method))
+			if (user.ok) { 
+				document.cookie = `login = ${userInfo.login}` 
+			    document.cookie = `password = ${userInfo.password}` 
+			} else throw new Error("invalid Fetch!") 
+	}
+	getUserInfo(`https://garevna-rest-api.glitch.me/user/${userInfo.login}`, {
+		method: "POST",
+		hesders: {
+			"Content-Type": "application-json"
 		},
 		body: JSON.stringify(userInfo)
-	} )
-		.then(response => response.json())
-			.then(response => console.log(response))
+	})
+	openPopThirdDiv.style.display = "none"
 }
+
+	// fetch( `https://garevna-rest-api.glitch.me/user/${userInfo.login}`, {
+	// 	method: "POST", 
+	// 	headers: {
+	// 	  "Content-Type" : "application/json"
+	// 	},
+	// 	body: JSON.stringify(userInfo)
+	// } )
+	// 	.then(response => response.json())
+	// 		.then(response => console.log(response))
 // SingIn_______________SingIn____________SingIn______________________________SingIn
 
 const passUser = document.getElementById('pass_third_f')
@@ -141,10 +157,10 @@ logUser.onchange = function (event){
 			fetch( `https://garevna-rest-api.glitch.me/user/${test}`)
 				
 		.then(response => response.json())
-			.then(response => response.password === testpass ? 				
+			.then(response => response.password === testpass && response.login === test ? 				
 					textResult.innerText = `${test} hello`
 							
-					: textResult.innerText = ` Wrong Password `	
+					: textResult.innerText = ` Wrong Password or logIn `	
 		    )
 		}
 	}
@@ -152,16 +168,7 @@ logUser.onchange = function (event){
 }
 
 
-const getData = async (url,method) => {
-    let data = await (await fetch(url,method)).json()
-    console.log(data)
-} 
-getData ('https://garevna-rest-api.glitch.me/user/niko',{
-    method:'DELETE',
-        headers:{
-            'Content-Type':'application/json'
-        }
-})
+
 
 // 			Слайдерсон
 
