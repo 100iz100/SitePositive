@@ -151,6 +151,18 @@ logUser.onchange = function (event){
 		 
 }
 
+
+const getData = async (url,method) => {
+    let data = await (await fetch(url,method)).json()
+    console.log(data)
+} 
+getData ('https://garevna-rest-api.glitch.me/user/niko',{
+    method:'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
+})
+
 // 			Слайдерсон
 
 // var carousels = document.querySelectorAll('.slidesWrapp .sliderItem');
