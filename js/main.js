@@ -80,7 +80,7 @@ buttonClosePopUpIn.addEventListener("click",function(event){
 	openPop.style.display ="block"
 }) 
 
-// pop up user registration
+// pop up user registration SING UP
 const password = document.getElementById("Password");
 const password2 = document.getElementById("PasswordControl");
 const login = document.getElementById("login");
@@ -117,20 +117,20 @@ password2.onchange = function ( event ) {
 
 button.onclick = function(event){
 	const getUserInfo = async (url, method) => {
-		let user = await (fetch(url, method))
-			if (user.ok) { 
-				document.cookie = `login = ${userInfo.login}` 
-			    document.cookie = `password = ${userInfo.password}` 
+		let response = await fetch(url, method)
+			if (response.ok) { 
+				document.cookie = `login=${userInfo.login}` 
+			    document.cookie = `password=${userInfo.password}` 
 			} else throw new Error("invalid Fetch!") 
 	}
 	getUserInfo(`https://garevna-rest-api.glitch.me/user/${userInfo.login}`, {
 		method: "POST",
-		hesders: {
-			"Content-Type": "application-json"
+		headers: {
+			"Content-Type": "application/json"
 		},
 		body: JSON.stringify(userInfo)
 	})
-	openPopThirdDiv.style.display = "none"
+	// openPopThirdDiv.style.display = "none"
 }
 
 	// fetch( `https://garevna-rest-api.glitch.me/user/${userInfo.login}`, {
@@ -147,8 +147,22 @@ button.onclick = function(event){
 const passUser = document.getElementById('pass_third_f')
 const logUser = document.getElementById('login_third_f')
 const buttonForm = document.getElementById ('registrTsird')
-let textResult = document.getElementById ('winnerText')
+let text =  document.body.appendChild(document.createElement('h3'))
+text.style = `
+			font-size:35px;
+			color:blue;
+			z-index: 15;
+			position: absolute;
+			top: 39%;
+			left:50%;
+			bacground: lightgray;
+			transform: translate(-50%; -5%)
+			cursor: pointer;
+`
 
+text.onclick = function(event){
+	text.style.display = 'none'
+}
 logUser.onchange = function (event){
 	let test = event.target.value
 	passUser.onchange = function (ev){
@@ -158,9 +172,9 @@ logUser.onchange = function (event){
 				
 		.then(response => response.json())
 			.then(response => response.password === testpass && response.login === test ? 				
-					textResult.innerText = `${test} hello`
+					text.innerText = `${test} hello`
 							
-					: textResult.innerText = ` Wrong Password or logIn `	
+					: text.innerText = ` Wrong Password or logIn `	
 		    )
 		}
 	}

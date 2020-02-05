@@ -1,4 +1,4 @@
-/*<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">*/
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">*/
 @media only screen and (max-width: 500px){
 	body header{ 
 	text-align: center;	
@@ -98,16 +98,16 @@ header{
 .img1,.img2,.img3,.img4{
 	width: 100%;
 	min-height: 970px;
-	background: url(images/sliderItem1.jpg) no-repeat 25%/cover;
+	background: url(../images/sliderItem1.jpg) no-repeat 25%/cover;
 }
 .img2{
-	background: url(images/sliderItem2.jpg) no-repeat 0/cover;
+	background: url(../images/sliderItem2.jpg) no-repeat 0/cover;
 }
 .img3{
-	background: url(images/sliderItem3.jpg) no-repeat 0/cover;
+	background: url(../images/sliderItem3.jpg) no-repeat 0/cover;
 }
 .img4{
-	background: url(images/sliderItem4.jpg) no-repeat 0/cover;
+	background: url(../images/sliderItem4.jpg) no-repeat 0/cover;
 }
 .sliderDots{
 	position: absolute;
@@ -204,7 +204,18 @@ header{
 	left: 50%;
 	transform: translate(-50%, -20%);
 	border:3px gray;
+	border-radius: 10%;
 	cursor: pointer;
+	width: 100px;
+	height: 30px;
+}
+
+#resbutton{
+	border:3px gray;
+	border-radius: 10%;
+	cursor: pointer;
+	width: 100px;
+	height: 30px;
 }
 
 #closeSingUp{
@@ -274,6 +285,7 @@ header{
 	z-index: 15;
 }
 
+/*button submit sing*/
 #registrTsird{
 	position: absolute;
 	bottom: 20%;
@@ -281,6 +293,9 @@ header{
 	transform: translate(-50%, -20%);
 	border:3px gray;
 	cursor: pointer;
+	border-radius: 10%;
+	width: 100px;
+	height: 30px;
 }
 
 #closeSingIn{
@@ -423,4 +438,4 @@ h2:hover {
 .popUpMenu> ul>li+li+li+li+li+li+li {
 	top:75%;
 	left: 25%;
-}*/
+}

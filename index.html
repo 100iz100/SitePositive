@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" type="text/css" href="refresh.css">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" type="text/css" href="style/refresh.css">
 </head>
 <body>
   <header>
@@ -55,7 +55,7 @@
            <input type="text" id="login" required placeholder="Ваш логин (email):">
            <input type="password" id="Password" required placeholder="Password:">   
            <input type="password" id="PasswordControl" required placeholder="Repeat password:">                      
-           <input type="reset" name="login" value="reset">
+           <input type="reset" id="resbutton" name="login" value="reset">
         </form>    
                 
           <button id="registrSubmit">Submit</button>
@@ -68,7 +68,7 @@
           <form id="SingInForm">
              <input type="text" id="login_third_f" required placeholder="Ваш логин (email):">
              <input type="password" id="pass_third_f" required placeholder="Password:">     
-             <input type="reset" name="login" value="reset">
+             <input type="reset" id="resbutton" name="login" value="reset">
           </form>    
                 
           <button id="registrTsird">Submit</button>
@@ -76,7 +76,7 @@
       </div>
     
     <!-- result of registration -->
-    <h2 id="winnerText"></h2>
+    <!-- <h2 id="winnerText"></h2> -->
    
 
 
@@ -107,7 +107,7 @@
   </header>
 
   <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha256.js"></script>
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 
 
 </body>
