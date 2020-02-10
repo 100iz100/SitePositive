@@ -38,7 +38,7 @@ dotsWrap.onclick = function (event) {
 
 // pop up menu
 
-let openPop = document.getElementById('openPopUp');
+let openPop = document.getElementById('openPopUp')
 let closePop = document.getElementById('closePopUp')
 let popUpBg = document.querySelector('.popUpBg')
 openPop.onclick = function (event) {

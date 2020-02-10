@@ -1,4 +1,20 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700&display=swap" rel="stylesheet">*/
+
+/*font-family: 'Lemonada', cursive; light 300 regular 400 medium 500semi-bold 600 bold 700*/
+<link href="https://fonts.googleapis.com/css?family=Lemonada:300,400,500,600,700&display=swap&subset=arabic" rel="stylesheet"> 
+@font-face {
+		    font-family: 'kob';
+		    src: url('../fonts/Lato/Lato-Black.ttf');
+		    src: url('../Fonts/Lato/Lato-BlackItalic.ttf'),
+		         url('../fonts/Lato/Lato-Bold.ttf'),
+		         url('../fonts/Lato/Lato-BoldItalic.ttf'),
+		         url('../fonts/Lato/Lato-Regular.ttf'),
+		         url('../fonts/Lato/Lato-Light.ttf');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
 @media only screen and (max-width: 500px){
 	body header{ 
 	text-align: center;	
@@ -17,14 +33,26 @@
 @media only screen and (max-width: 768px){
 	body header{
 		display: grid;
-		grid-template-rows: 500px;
-		h1:85px;
+		/*grid-template-rows: 500px;*/
 		text-align: center;
+	}
+	body header .inscription h1{
+		font-size: 85px;
+	}
+	body header .inscription h2{
+		font-size: 35px;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 992px){
-
+@media (min-width: 768px) {
+	body header{
+		display: grid;
+		/*grid-template-rows: 500px;*/
+		text-align: center;
+	}
+	body header .inscription h1{
+		font-size: 230px;
+	}
 }
 
 
@@ -36,6 +64,7 @@ header{
 	display: grid;
 	grid-template-columns: 1fr; 
 	grid-auto-rows: 1fr;
+	height: 100vh;
 }
 .logo{
 	position: absolute;
@@ -51,16 +80,17 @@ header{
 	color: lightblue;
 	cursor:pointer;
 	text-decoration: none;
+	border-radius: 20%;
 }
 
 .menu {
 	position: absolute;
-	right: 15%;
-	top:7%;
+	right: 15vw;
+	top:7vh;
 	cursor:pointer;
 	font-size: 25px;
-	color:lightblue;
 }
+
 .popUpBg{
 	position: fixed;
 	background: rgba(19,22,25,0.9);
@@ -81,23 +111,25 @@ header{
 		/*MENU*/
 #openPopUp{
 	font-size: 15px;
-	color: #fff;
+	font-family: 'Lemonada';
+	color: lightblue;
 	padding-bottom: 5px;
 	padding-top: 5px;
 	position: relative;
-	border-bottom: 2px solid #fff;
-	border-top: 2px solid #fff;
+	border-bottom: 2px solid steelblue;
+	border-top: 2px solid steelblue;
+	transition: all 1s;
 }
 
 #openPopUp:hover{
-	border-bottom: 4px solid #fff;
-	border-top: 4px solid #fff;
+	border-bottom: 4px solid steelblue;
+	border-top: 4px solid steelblue;
 }
 		/*SLIDER*/
 
 .img1,.img2,.img3,.img4{
 	width: 100%;
-	min-height: 970px;
+	height: 100%;
 	background: url(../images/sliderItem1.jpg) no-repeat 25%/cover;
 }
 .img2{
@@ -111,7 +143,7 @@ header{
 }
 .sliderDots{
 	position: absolute;
-	bottom: -33%;
+	bottom: 1%;
 	left:50%;
 	transform:translate(-50%,-10%);
 }
@@ -281,7 +313,7 @@ header{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background:  #ffe5b4;
-	text-align:center;
+	text-align: center;
 	z-index: 15;
 }
 
@@ -348,25 +380,58 @@ header{
 
 .inscription{
 	position: absolute;
-	top: 55%;
-	right: 1%;
+	top: 28%;
+	right: 8%;
 }
 
 .inscription h1{
 	font-size: 220px;
+	font-family: 'Lato'
 	/*color: #fff;*/
 	text-shadow: -1px -1px #000,
                0 1px 0 #444;
     color: lightblue;
     transition: all 1s;
-    border-bottom-width: 0;
+    border-bottom: 2px solid steelblue;
+    border-top: 2px solid steelblue;
+   	text-decoration: none;
+	position: relative;
+}
+
+.inscription h1:before{
+	content: "";
+    width: 1px;
+    background: blue;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease;
+}
+
+h1:hover:before{
+	height: 100%;
+}
+
+h1:after{
+	content:"";
+	width: 1px;
+	background: blue;
+	height: 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transition: all 1s ease;
+}
+
+h1:hover:after{
+	height: 100%;
 }
 
 h1:hover {
     text-shadow: -1px -1px #000,
                0 1px 0 #444;
     color: cyan;
-    border-bottom: 3px solid steelblue;
     border-bottom-width: 100%;
  }
 
@@ -400,42 +465,62 @@ h2:hover {
              0 0 0 hsl(80,100%,95%);
   color: transparent;
  }
-/*.popUpMenu> ul> li{
-	position: absolute;
-	top:10%;
-	left: 25%;
-	padding-top: 30px;
-	color:#fff;
-	font-size: 35px;
-	cursor:pointer;
-}*/
 
+/*================SECOND PAJE===================*/
 
-/*.popUpMenu> ul>li+li {
-	top:10%;
-	left: 40%;
-}
-.popUpMenu> ul>li+li+li {
-	top:23%;
-	left: 25%;
+.mainBlock{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
 }
 
-.popUpMenu> ul>li+li+li+li {
-	top:36%;
-	left: 25%;
+.secondPajediv1{
+	grid-area: 1 / 1 / 2 / 5;
+}
+.firstH3firstPart{
+	font-size: 60;
+	font-weight: thin;
+	text-align: center;
+}
+.secondH3firstPart{
+	font-size: 60;
+	font-weight: bold;
+	text-align: center;
+}
+.secondPajediv2text{
+	 grid-area: 2 / 1 / 3 / 3;
 }
 
-.popUpMenu> ul>li+li+li+li+li {
-	top:49%;
-	left: 25%;
+.secondPajediv3pictures{
+	 grid-area: 2 / 3 / 3 / 5;
 }
-
-.popUpMenu> ul>li+li+li+li+li+li {
-	top:62%;
-	left: 25%;
+.secondPajediv4inscript{
+	grid-area: 3 / 1 / 4 / 5;
 }
-
-.popUpMenu> ul>li+li+li+li+li+li+li {
-	top:75%;
-	left: 25%;
+.secondPajediv5text1{
+	grid-area: 4 / 1 / 5 / 3;
 }
+.secondPajediv6text2{
+	grid-area: 4 / 3 / 5 / 5;
+}
+.secondPajediv7text3{
+	grid-area: 5 / 1 / 6 / 3;
+}
+.secondPajediv8text4{
+	grid-area: 5 / 3 / 6 / 5;
+}
+.secondPajediv9button{
+	grid-area: 6 / 1 / 7 / 5; 
+}
+/*.div1 { grid-area: 1 / 1 / 2 / 5; }
+.div2 { grid-area: 2 / 1 / 3 / 3; }
+.div3 { grid-area: 2 / 3 / 3 / 5; }
+.div4 { grid-area: 3 / 1 / 4 / 5; }
+.div5 { grid-area: 4 / 1 / 5 / 3; }
+.div6 { grid-area: 4 / 3 / 5 / 5; }
+.div7 { grid-area: 5 / 1 / 6 / 3; }
+.div8 { grid-area: 5 / 3 / 6 / 5; }
+.div9 { grid-area: 6 / 1 / 7 / 5; }
+*/
